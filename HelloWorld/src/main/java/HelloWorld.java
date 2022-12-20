@@ -1,5 +1,10 @@
 public class HelloWorld {
     public String sayHello() {
-        return "Hello, world[!]";
+        return "Hello, world!";
+    }
+
+    @Override
+    public String toString() {
+        return "HelloWorld []";
     }
 }
