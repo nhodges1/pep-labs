@@ -40,12 +40,12 @@
     :git_user_name: nhodges1
 :progress:
   :count_labs_total: 96
-  :count_labs_passed: 0
+  :count_labs_passed: 1
   :count_tests_total: 361
-  :count_tests_passed: 9
+  :count_tests_passed: 16
 :progress_test:
   :count_tests_total: 361
-  :count_tests_passed: 9
+  :count_tests_passed: 16
   Start:
     :Week: 1
     :Order: 1
@@ -77,24 +77,24 @@
     :Order: 4
     :Type: lab
     :count_tests: 16
-    :count_tests_passed: 9
+    :count_tests_passed: 16
     :tests:
       isEqualTest1: 1
       isEqualTest2: 1
-      greaterThanTest1: 0
+      greaterThanTest1: 1
       greaterThanTest2: 1
       greaterThanTest3: 1
-      lessThanTest1: 0
+      lessThanTest1: 1
       lessThanTest2: 1
       lessThanTest3: 1
-      greaterThanOrEqualToTest1: 0
-      greaterThanOrEqualToTest2: 0
+      greaterThanOrEqualToTest1: 1
+      greaterThanOrEqualToTest2: 1
       greaterThanOrEqualToTest3: 1
-      lessThanOrEqualToTest1: 0
-      lessThanOrEqualToTest2: 0
+      lessThanOrEqualToTest1: 1
+      lessThanOrEqualToTest2: 1
       lessThanOrEqualToTest3: 1
       notEqualToTest1: 1
-      notEqualToTest2: 0
+      notEqualToTest2: 1
       parrotTestHello: 0
       parrotTestPolly: 0
   CombineStrings:
