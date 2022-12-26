@@ -15,6 +15,18 @@ public class FizzBuzz {
      * divisible by both, return 'FizzBuzz'. If none of these are true, return a blank string "".
      */
     public String FizzBuzzGen(int n){
-        return "";
+        if ((n % 3 == 0) && (n % 5 == 0)){
+            System.out.println(n + " FizzBuzz ");
+            return "FizzBuzz";
+        } if (n % 3 == 0){
+            System.out.println(n + " Fizz ");
+            return "Fizz";
+        } if (n % 5 == 0){
+            System.out.println(n + " Buzz ");
+            return "Buzz";
+        } else {
+            System.out.println(n + " is not FizzBuzzable ");
+            return "";
+        }
     }
 }
