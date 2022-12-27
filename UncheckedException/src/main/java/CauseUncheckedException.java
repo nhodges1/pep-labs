@@ -1,5 +1,5 @@
 
-public class CauseUncheckedException {
+public class CauseUncheckedException extends RuntimeException {
     /**
      * This method must throw an unchecked exception.
      * unchecked means that you do not need to wrap the method in a try/catch or a throws declaration.
@@ -14,6 +14,6 @@ public class CauseUncheckedException {
      * event happens, like running out of computer memory.
      */
     public void throwUncheckedException(){
-
+    
     }
 }
