@@ -1,3 +1,4 @@
+import java.io.IOException;
 
 public class CauseUncheckedException extends RuntimeException {
     /**
@@ -14,6 +15,6 @@ public class CauseUncheckedException extends RuntimeException {
      * event happens, like running out of computer memory.
      */
     public void throwUncheckedException() {
-        throw new Error();
+        throw new RuntimeException();
     }
 }
