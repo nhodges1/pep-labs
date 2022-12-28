@@ -20,7 +20,8 @@ public class SetExercise {
      * @return a new Set<Integer> object.
      */
     public Set<Integer> createSet(){
-        return null;
+        Set<Integer> hash_set = new HashSet<Integer> (); 
+        return hash_set;
     }
 
     /**
