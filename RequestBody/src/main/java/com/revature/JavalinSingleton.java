@@ -17,7 +17,8 @@ public class JavalinSingleton {
          * Note: Please refer to the "RequestBody.MD" file for more assistance if needed.
          */
         app.post("/problem1", ctx -> {
-                //implement logic here
+            String songName = ctx.body();
+            ctx.result(songName);
         });
 
         /**
