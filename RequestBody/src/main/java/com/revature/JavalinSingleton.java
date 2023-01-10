@@ -1,5 +1,9 @@
 package com.revature;
 
+import org.eclipse.jetty.server.Authentication.User;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import io.javalin.Javalin;
 
 /**
@@ -17,8 +21,11 @@ public class JavalinSingleton {
          * Note: Please refer to the "RequestBody.MD" file for more assistance if needed.
          */
         app.post("/problem1", ctx -> {
-            String songName = ctx.body();
-            ctx.result(songName);
+            String getArtistName = ctx.body();
+            
+            ObjectMapper om = new ObjectMapper();
+            Song song = om.readValue(getArtistName, Song.class);
+            ctx.result(song);
         });
 
         /**
@@ -29,7 +36,23 @@ public class JavalinSingleton {
          * Note: Please refer to the "RequestBody.MD" file for more assistance if needed.
          */
         app.post("/problem2", ctx -> {
-               //implement logic here
+            String artistName = ctx.body();
+
+            //utilize jackson to convert the json string to a user object
+            ObjectMapper om = new ObjectMapper();
+            Song song = om.readValue(artistName, Song.class);
+        
+            //we need to let the request know we will send back json in the body
+            ctx.contentType("application/json"); 
+        
+            //change the last name
+            song.setArtistName("Beatles");
+            
+            //utilize jackson convert back the user object to a json string
+            String getArtistName = om.writeValueAsString(song);
+        
+            //return the json string in the response body
+            ctx.result(getArtistName);
         });
 
 
