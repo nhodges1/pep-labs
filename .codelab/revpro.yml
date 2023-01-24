@@ -779,6 +779,9 @@
     :tests:
       pyramidTest1: 0
       pyramidTest2: 0
+      prob1a: 0
+      prob1b: 0
+      prob2a: 0
   ContainsDuplicates:
     :Week: 6
     :Order: 6
