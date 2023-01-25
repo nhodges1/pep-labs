@@ -45,7 +45,7 @@ public class FlightService {
      *         inform our provide the front-end client with information about the added Flight.
      */
     public Flight addFlight(Flight flight){
-        return null;
+        return flightDAO.insertFlight(flight);
     }
 
     /**
@@ -56,7 +56,7 @@ public class FlightService {
      *
      * @param flight_id the ID of the flight to be modified.
      * @param flight an object containing all data that should replace the values contained by the existing flight_id.
-     * @return the newly updated flight if the update operation was successful. Return null if the update operation was
+     * @return the newly updated flight if the update operation was successful. Rturn null if the update operation was
      *         unsuccessful. We do this to inform our application about successful/unsuccessful operations. (eg, the
      *         user should have some insight if they attempted to edit a nonexistent flight.)
      */
@@ -77,7 +77,7 @@ public class FlightService {
      * @return all flights in the database.
      */
     public List<Flight> getAllFlights() {
-        return null;
+        return flightDAO.getAllFlights();
     }
 
     /**
@@ -89,6 +89,6 @@ public class FlightService {
      * @return all flights departing from departure_city and arriving at arrival_city.
      */
     public List<Flight> getAllFlightsFromCityToCity(String departure_city, String arrival_city) {
-        return null;
+        return flightDAO.getAllFlightsFromCityToCity(departure_city, arrival_city);
     }
 }
