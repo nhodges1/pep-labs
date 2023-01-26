@@ -56,6 +56,22 @@ public class SampleClass {
     public boolean b;
 
     //    implement a custom .equals(SampleClass other){} method here.
+    public SampleClass(int a, boolean b) {
+        this.a = a;
+        this.b = b;
+    }
+    @Override
+    public boolean equals(Object object) {
+    SampleClass anotherClass= (SampleClass) object; //downcasting from object to Person
+        if (this.a != anotherClass.a) {
+            return false;
+        }
+        if (this.b != anotherClass.b) {
+            return false;
+        }
+       return true;
+    }
+    
 
 
     //    implement a custom .toString(){} method here.
