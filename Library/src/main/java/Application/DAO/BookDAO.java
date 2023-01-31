@@ -92,8 +92,10 @@ public class BookDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             //write preparedStatement's setString and setInt methods here.
-            preparedStatement.setInt(1, book.setIsbn());
-            preparedStatement.setString(1, book.setTitle());
+            preparedStatement.setInt(1, book.getIsbn());
+            preparedStatement.setInt(2, book.getAuthor_id());
+            preparedStatement.setString(3, book.getTitle());
+            preparedStatement.setInt(4, book.getCopies_available());
 
             preparedStatement.executeUpdate();
             return book;
@@ -112,11 +114,10 @@ public class BookDAO {
         List<Book> books = new ArrayList<>();
         try {
             //Write SQL logic here
-            String sql = "SELECT * FROM Book count(?) > 0";
+            String sql = "SELECT * FROM Book count > 0";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
             //write preparedStatement's setInt method here.
-            preparedStatement.setInt(1, books);
 
             ResultSet rs = preparedStatement.executeQuery();
             while(rs.next()){
