@@ -1,4 +1,6 @@
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class LargestSum {
@@ -10,6 +12,21 @@ public class LargestSum {
      * @return the largest possible sum of separate numbers from nums.
      */
     public int bigSum(List<Integer> nums){
-        return 0;
+        Collections.sort(nums, new Comparator<Integer>() {
+ 
+            @Override
+            public int compare(Integer i1, Integer i2) {
+                return Integer.compare(i2, i1); // descending-order sorting
+            }
+        });
+        int sum = 0;
+ 
+ 
+        // summing first 2 largest numbers
+        for(int index = 0; index < nums.size() && index < 2; index++) {
+ 
+            sum += nums.get(index);
+        }
+        return sum;
     }
 }
