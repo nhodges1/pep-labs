@@ -16,12 +16,9 @@ public class WordCountMap {
      */
     public Map<String, Integer> returnWordMap(String words){
         Map<String, Integer> hashMap = new HashMap<>();
+        String[] count = words.split(" ");
  
-        // Splitting the words of string
-        // and storing them in the array.
-        String[] words = str.split(" ");
- 
-        for (String word : words) {
+        for (String word : count) {
  
             // Asking whether the HashMap contains the
             // key or not. Will return null if not.
@@ -36,6 +33,8 @@ public class WordCountMap {
                 // Incrementing the value if the word
                 // is already present in the HashMap.
                 hashMap.put(word, integer + 1);
-        return null;
+            }
+        }
+        return hashMap;
     }
 }
