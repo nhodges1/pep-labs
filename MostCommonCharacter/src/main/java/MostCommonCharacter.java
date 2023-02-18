@@ -1,3 +1,9 @@
+import static org.junit.Assert.fail;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 public class MostCommonCharacter {
     /**
@@ -7,28 +13,27 @@ public class MostCommonCharacter {
      * @param str A String.
      * @return the most common character within str.
      */
-    static final int ASCII_SIZE = 256;
+    
     public char recurringChar(String str) {    
-        int count[] = new int[ASCII_SIZE];
- 
-        // Construct character count array from the input
-        // string.
-        int len = str.length();
-        for (int i = 0; i < len; i++)
-            count[str.charAt(i)]++;
- 
-        int max = -1; // Initialize max count
-        char result = ' '; // Initialize result
- 
-        // Traversing through the string and maintaining
-        // the count of each character
-        for (int i = 0; i < len; i++) {
-            if (max < count[str.charAt(i)]) {
-                max = count[str.charAt(i)];
-                result = str.charAt(i);
+
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        char key=' ';
+        for(int i=0; i<str.length(); i++){
+            key=str.charAt(i);
+            if(map.containsKey(key)==true){
+                map.replace(key, map.get(key)+1);
+            }
+            else{
+                map.put(key, 1);
             }
         }
- 
-        return result;
+        key=str.charAt(0);
+        for(int i=1; i<str.length(); i++){
+            if(map.get(str.charAt(i))>map.get(key)){
+                key=str.charAt(i);
+            }
+        }
+        return key;
     }
 }
+
