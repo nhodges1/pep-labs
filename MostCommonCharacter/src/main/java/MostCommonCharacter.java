@@ -1,7 +1,9 @@
 import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,25 +17,23 @@ public class MostCommonCharacter {
      */
     
     public char recurringChar(String str) {    
-
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        char key=' ';
-        for(int i=0; i<str.length(); i++){
-            key=str.charAt(i);
-            if(map.containsKey(key)==true){
-                map.replace(key, map.get(key)+1);
-            }
-            else{
-                map.put(key, 1);
+        int[] hash_table = new int[256];
+        int n = str.length();
+        for (int i = 0; i < n; i++)
+        {
+            hash_table[str.charAt(i)]++;
+        }
+        int max_count = 0;
+        char ans='a';
+        for (int i = 0; i < 256; i++)
+        {
+            if (hash_table[i] > max_count)
+            {
+                max_count = hash_table[i];
+                ans = (char)i;
             }
         }
-        key=str.charAt(0);
-        for(int i=1; i<str.length(); i++){
-            if(map.get(str.charAt(i))>map.get(key)){
-                key=str.charAt(i);
-            }
-        }
-        return key;
+    return ans;
     }
 }
 

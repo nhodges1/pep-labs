@@ -40,12 +40,12 @@
     :git_user_name: nhodges1
 :progress:
   :count_labs_total: 96
-  :count_labs_passed: 0
+  :count_labs_passed: 1
   :count_tests_total: 361
-  :count_tests_passed: 5
+  :count_tests_passed: 6
 :progress_test:
   :count_tests_total: 361
-  :count_tests_passed: 5
+  :count_tests_passed: 6
   Start:
     :Week: 1
     :Order: 1
@@ -1024,10 +1024,10 @@
     :Order: 3
     :Type: challenge
     :count_tests: 6
-    :count_tests_passed: 5
+    :count_tests_passed: 6
     :tests:
       mostCommonCharacterTest1: 1
-      mostCommonCharacterTest2: 0
+      mostCommonCharacterTest2: 1
       mostCommonCharacterTest3: 1
       mostCommonCharacterTest4: 1
       mostCommonCharacterTest5: 1
